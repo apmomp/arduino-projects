@@ -4,7 +4,6 @@
 
 /* pin configuration */
 const int dhtPin = 4;
-const int tempPin = 0;
 const int relePin = 5;
 
 /* constants */
@@ -135,8 +134,8 @@ void btnControl() {
 
 void loop() {
   readTemperature();
-  if (tempC != -200) {
-    updateLcd();  
+  if (tempCInitialized) {
+    updateLcd();
     handleBoiler();
   }  
 }
